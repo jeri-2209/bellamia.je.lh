@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BellaMía: moda, perfumes, zapatos y accesorios para ti.">
+<title>BellaMía | Tu estilo, tu esencia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="announcement">♡ Envíos a todo el Perú &nbsp; | &nbsp; Productos seleccionados con amor &nbsp; | &nbsp; Pagos seguros</div>
+<header>
+  <div class="nav">
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+    <a class="logo" href="#">♡ BellaMía<small>TU ESTILO, TU ESENCIA</small></a>
+    <nav class="navlinks" id="navlinks"><a href="#inicio">Inicio</a><a href="#categorias">Categorías</a><a href="#productos">Productos</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></nav>
+    <div class="nav-actions"><button class="icon-btn" id="favoritesShortcut" title="Ver favoritos">♡</button> <button class="icon-btn" id="openCart" title="Abrir carrito">🛍<span class="count" id="cartCount">0</span></button></div>
+    <form class="search" id="searchForm"><input id="searchInput" type="search" placeholder="Buscar productos..." aria-label="Buscar productos"><button aria-label="Buscar">⌕</button></form>
+  </div>
+</header>
+<main id="inicio">
+  <section class="hero">
+    <div class="hero-copy"><div class="eyebrow">Descubre tu mejor versión</div><h1>Tu estilo, tu esencia</h1><p>Perfumes, ropa, zapatos, accesorios y pequeños detalles que te hacen brillar.</p><a class="primary" href="#productos">¡Compra ahora! &nbsp; ›</a></div>
+    <div class="hero-photo" role="img" aria-label="Mujer luciendo un conjunto de moda"></div>
+  </section>
+  <section class="categories" id="categorias" aria-label="Categorías">
+    <button class="category" data-category="Perfumes"><span class="bubble"><img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=200&q=80" alt=""></span>Perfumes</button>
+    <button class="category" data-category="Ropa"><span class="bubble"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=200&q=80" alt=""></span>Ropa</button>
+    <button class="category" data-category="Zapatos"><span class="bubble"><img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=200&q=80" alt=""></span>Zapatos</button>
+    <button class="category" data-category="Aretes"><span class="bubble"><img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=200&q=80" alt=""></span>Aretes</button>
+    <button class="category" data-category="Bolsos"><span class="bubble"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=200&q=80" alt=""></span>Bolsos</button>
+    <button class="category" data-category="Relojes"><span class="bubble"><img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=200&q=80" alt=""></span>Relojes</button>
+    <button class="category" data-category="Maquillaje"><span class="bubble"><img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=200&q=80" alt=""></span>Maquillaje</button>
+    <button class="category" data-category="Cuidado personal"><span class="bubble"><img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=200&q=80" alt=""></span>Cuidado personal</button>
+  </section>
+  <section class="promo-row">
+    <article class="promo" style="background-image:url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80')"><div><h3>Ropa que resalta tu personalidad</h3><a href="#productos" class="primary" data-jump-category="Ropa">Ver colección ›</a></div></article>
+    <article class="promo" style="background-image:url('https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=900&q=80')"><div><h3>Comodidad y estilo en cada paso</h3><a href="#productos" class="primary" data-jump-category="Zapatos">Ver zapatos ›</a></div></article>
+  </section>
+  <section class="shop" id="productos">
+    <aside class="filters">
+      <h3>Filtrar por</h3>
+      <div class="filter-group"><h4>Precio máximo</h4><input id="priceRange" type="range" min="10" max="500" value="500" step="5"><div class="price-labels"><span>S/ 10</span><strong id="maxPriceLabel">S/ 500</strong></div></div>
+      <div class="filter-group"><h4>Categoría</h4><div id="categoryChecks"></div></div>
+      <div class="filter-group"><h4>Disponibilidad</h4><label class="checkline"><input type="checkbox" id="onlyOffers"> Solo ofertas</label></div>
+      <button class="primary filter-actions" id="applyFilters">Aplicar filtros</button><span class="clear" id="clearFilters">Limpiar filtros</span>
+    </aside>
+    <div class="catalog">
+      <div class="section-heading"><h2>Productos destacados</h2><select class="sort" id="sortSelect" aria-label="Ordenar productos"><option value="featured">Ordenar: destacados</option><option value="low">Precio: menor a mayor</option><option value="high">Precio: mayor a menor</option><option value="name">Nombre: A-Z</option></select></div>
+      <div class="products" id="productGrid"></div>
+    </div>
+  </section>
+</main>
+<section class="newsletter" id="contacto"><h2>Un detalle bonito para ti</h2><p>Suscríbete para enterarte de novedades y promociones.</p><form id="newsletterForm"><input type="email" placeholder="Tu correo electrónico" required aria-label="Tu correo electrónico"><button class="primary">Suscribirme</button></form></section>
+<footer id="nosotros"><div class="logo">♡ BellaMía</div><p>Moda, belleza y accesorios para expresar tu esencia.</p><p>© <span id="year"></span> BellaMía. Página de demostración personalizable.</p><p>Contacto: hola@bellamia.pe · Instagram: @bellamia</p></footer>
+<div class="overlay" id="overlay"></div>
+<aside class="cart-panel" id="cartPanel" aria-label="Carrito de compras"><div class="cart-head"><h2>Tu carrito</h2><button class="close-cart" id="closeCart" aria-label="Cerrar">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-total"><span>Total</span><span id="cartTotal">S/ 0.00</span></div><button class="primary checkout" id="checkout">Finalizar pedido</button><p style="font-size:11px;color:#888">Demo: el botón no procesa pagos reales.</p></aside>
+<div class="toast" id="toast" role="status"></div>
+  <script src="script.js" defer></script>
+</body>
+</html>
